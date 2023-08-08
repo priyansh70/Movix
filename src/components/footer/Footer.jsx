@@ -28,22 +28,22 @@ const Footer = () => {
                 </div>
                 <div className="socialIcons">
                     <span className="icon">
-                        <Link to={`https://www.facebook.com/priyansh.patel.94651/`} target="_blank">
+                        <Link to={`https://www.facebook.com/priyansh.patel.94651/`} target="_blank" className="link">
                             <FaFacebookF />
                         </Link>
                     </span>
                     <span className="icon">
-                        <Link to={`https://www.instagram.com/_p_r_i_y_a_n_s_h/`} target="_blank">
+                        <Link to={`https://www.instagram.com/_p_r_i_y_a_n_s_h/`} target="_blank" className="link">
                             <FaInstagram />
                         </Link>
                     </span>
                     <span className="icon">
-                        <Link to={`https://twitter.com/Priyansh79`} target="_blank">
+                        <Link to={`https://twitter.com/Priyansh79`} target="_blank" className="link">
                             <FaTwitter />
                         </Link>
                     </span>
                     <span className="icon">
-                        <Link to={`https://www.linkedin.com/in/-priyanshpatel/`} target="_blank">
+                        <Link to={`https://www.linkedin.com/in/-priyanshpatel/`} target="_blank" className="link">
                             <FaLinkedin />
                         </Link>
                     </span>
