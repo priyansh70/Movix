@@ -127,7 +127,6 @@ const Explore = () => {
                             options={sortbyData}
                             onChange={onChange}
                             isClearable={true}
-                            isSearchable={true}
                             placeholder="Sort by"
                             className="react-select-container sortbyDD"
                             classNamePrefix="react-select"
