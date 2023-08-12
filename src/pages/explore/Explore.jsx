@@ -112,6 +112,7 @@ const Explore = () => {
                             name="genres"
                             value={genre}
                             closeMenuOnSelect={false}
+                            isSearchable={true}
                             options={genresData?.genres}
                             getOptionLabel={(option) => option.name}
                             getOptionValue={(option) => option.id}
@@ -126,6 +127,7 @@ const Explore = () => {
                             options={sortbyData}
                             onChange={onChange}
                             isClearable={true}
+                            isSearchable={true}
                             placeholder="Sort by"
                             className="react-select-container sortbyDD"
                             classNamePrefix="react-select"
