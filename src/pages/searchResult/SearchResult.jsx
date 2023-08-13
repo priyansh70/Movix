@@ -9,6 +9,7 @@ import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
 import noResults from "../../assets/no-results.png";
+import Img from "../../components/lazyLoadImage/Img";
 
 const SearchResult = () => {
   const [data, setData] = useState(null);
@@ -82,7 +83,10 @@ const SearchResult = () => {
               </InfiniteScroll>
             </>
           ) : (
-            <span className="resultNotFound">Sorry, Results not found!</span>
+            <div className="emptyResult">
+              <Img src={noResults} className="noresult"/>
+              <span className="resultNotFound">Sorry, Results not found!</span>
+            </div>
           )}
         </ContentWrapper>
       )}
