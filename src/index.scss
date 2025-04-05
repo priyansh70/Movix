@@ -74,6 +74,7 @@ body {
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  transition: 1s;
 }
 
 /* === Custom Chatbox Frame === */
@@ -84,7 +85,6 @@ body {
 }
 
 #chatbot-button:hover {
-  background-color: #e64a19 !important;
   transform: scale(1.05);
 }
 
