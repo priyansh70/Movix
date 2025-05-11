@@ -58,6 +58,7 @@ export default function Chatbot() {
             boxShadow: isMobile
               ? "0 4px 16px  rgba(0,0,0,0.25)"
               : "0 8px 30px rgba(0,0,0,0.25)",
+            textAlign: "left",
           }}
         >
           <Webchat />

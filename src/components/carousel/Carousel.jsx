@@ -16,6 +16,7 @@ import Genres from "../genres/Genres";
 import "./style.scss";
 
 const Carousel = ({ data, loading, endpoint, title }) => {
+  console.log(data);
   const carouselContainer = useRef();
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate();
@@ -23,20 +24,16 @@ const Carousel = ({ data, loading, endpoint, title }) => {
     const container = carouselContainer.current;
     console.log(container.scrollLeft);
 
-    const scrollAmount = dir === "left" ?
-      (
-        container.scrollLeft - (container.offsetWidth + 20)
-      ) :
-      (
-        container.scrollLeft +
-        (container.offsetWidth + 20)
-      )
+    const scrollAmount =
+      dir === "left"
+        ? container.scrollLeft - (container.offsetWidth + 20)
+        : container.scrollLeft + (container.offsetWidth + 20);
 
-    console.log(scrollAmount)
+    console.log(scrollAmount);
     container.scrollTo({
       left: scrollAmount,
-      behavior: "smooth"
-    })
+      behavior: "smooth",
+    });
   };
 
   const skItem = () => {
@@ -64,23 +61,31 @@ const Carousel = ({ data, loading, endpoint, title }) => {
           onClick={() => navigation("right")}
         />
         {!loading ? (
-          <div className="carouselItems"
-            ref={carouselContainer}>
+          <div
+            className="carouselItems"
+            ref={carouselContainer}
+          >
             {data?.map((item) => {
-              const posterUrl = item.poster_path
-                ? url.poster + item.poster_path
+              const posterUrl = item?.poster_path
+                ? url.poster + item?.poster_path
                 : PosterFallback;
               return (
-                <div key={item.id} className="carouselItem" onClick={() => navigate(`/${item?.media_type || endpoint}/${item.id}`)}>
+                <div
+                  key={item?.id}
+                  className="carouselItem"
+                  onClick={() =>
+                    navigate(`/${item?.media_type || endpoint}/${item?.id}`)
+                  }
+                >
                   <div className="posterBlock">
                     <Img src={posterUrl} />
-                    <CircleRating rating={item.vote_average.toFixed(1)} />
-                    <Genres data={item.genre_ids.slice(0, 2)} />
+                    <CircleRating rating={item?.vote_average?.toFixed(1)} />
+                    <Genres data={item?.genre_ids?.slice(0, 2)} />
                   </div>
                   <div className="textBlock">
-                    <span className="title">{item.title || item.name}</span>
+                    <span className="title">{item?.title || item?.name}</span>
                     <div className="date">
-                      {dayjs(item.release_date).format("MMM DD, YYYY")}
+                      {dayjs(item?.release_date).format("MMM DD, YYYY")}
                     </div>
                   </div>
                 </div>
